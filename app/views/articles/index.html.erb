@@ -1,0 +1,41 @@
+
+<section class="py-5">
+    <div class="container">
+        <!---->
+        <div class="row">
+            <div class="col-lg-6 mx-auto">
+                <header class="text-center pb-5">
+                    <h1 class="h2">JC's blog</h2>
+                    <p>--</p>
+                </header>
+            </div>
+        </div><!-- END -->
+        
+        <% @articles.each do |article| %>
+        <div class="row">
+            <div class="col-lg-6 mx-auto">
+
+                <!-- CUSTOM BLOCKQUOTE -->
+                <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                    <h1><%= article.title %></h1>
+                    <p class="mb-0 mt-2 font-italic"><%= article.content %></p>
+                    <footer class="blockquote-footer pt-4 mt-4 border-top">
+                        <%= article.author %>
+                        <%= link_to 'edit', edit_article_path(id: article.id), class:'btn btn-info' %>
+                        <%= link_to 'delete', destroy_article_path(id: article.id), class:'btn btn-info' %>
+                    </footer>
+                </blockquote><!-- END -->
+
+            </div>
+        </div>
+        <% end %>
+        <div class="row">
+            <div class="col-lg-6 mx-auto">
+                <header class="text-center pb-5">
+                    <button type="button" class="btn btn-outline-dark .btn-lg"><%= link_to 'new article', new_article_path %></button>
+                </header>
+            </div>
+        </div>
+        >
+    </div>
+</section>

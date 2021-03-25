@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_03_22_040714) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.string "author"
-    t.text "body"
+    t.text "content"
     t.integer "view_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
